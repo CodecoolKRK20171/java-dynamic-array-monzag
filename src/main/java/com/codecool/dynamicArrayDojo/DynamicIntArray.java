@@ -27,7 +27,16 @@ public class DynamicIntArray {
     }
 
     public void insert(int index, int item) {
-
+        if (index <= this.size) {
+            this.size += 1;
+            int[] tempArray = new int[this.size];
+            System.arraycopy(staticArray, 0, tempArray, 0, index);
+            System.arraycopy(staticArray, index, tempArray, index + 1, this.size - 1 - index);
+            this.staticArray = tempArray;
+            this.staticArray[index] = item;
+        } else {
+            add(item);
+        }
     }
 
     public void remove(int index) {
