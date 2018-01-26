@@ -31,7 +31,11 @@ public class DynamicIntArray {
     }
 
     public void remove(int index) {
-
+        this.size -= 1;
+        int[] tempArray = new int[this.size];
+        System.arraycopy(staticArray, 0, tempArray, 0, index);
+        System.arraycopy(staticArray, index + 1, tempArray, index, this.size - index);
+        this.staticArray = tempArray;
     }
 
     public String toString() {
