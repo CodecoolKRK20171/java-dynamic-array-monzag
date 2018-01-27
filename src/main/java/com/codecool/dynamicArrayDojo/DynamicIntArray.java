@@ -2,7 +2,6 @@ package com.codecool.dynamicArrayDojo;
 
 import java.util.Arrays;
 
-// put your code here!
 public class DynamicIntArray {
 
     private int size;
